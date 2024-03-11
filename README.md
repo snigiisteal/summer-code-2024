@@ -6,4 +6,4 @@
     keeps track of
     ->steps taken
     ->distance covered
-    ->calories burned
+    ->calories burned.
