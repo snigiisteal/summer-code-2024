@@ -11,3 +11,7 @@ def login():
 def logout():
     return "<p>logout</p>"
 
+@auth.route('/auth_success')
+def auth_success():
+    print("Success")
+    return render_template('dash.html')
