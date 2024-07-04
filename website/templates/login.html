@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login_style.css') }}">
+</head>
+<body>
+    <div class="box">
+        <h2>Sign In</h2>
+        <p>Sign in with Google Account</p>
+            <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/fitness.activity.read&access_type=offline&include_granted_scopes=true&response_type=code&state=test&redirect_uri=http://localhost:5000/auth_success&client_id=1027756222454-ufki6ps11uekfolq26psrc1rhksm4dgk.apps.googleusercontent.com">Sign in with Google</a>
+    </div>
+</body>
+</html>
