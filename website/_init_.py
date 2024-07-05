@@ -9,19 +9,22 @@ def create_app():
     app =Flask(__name__)
     app.config['SECRET_KEY'] = 'akjshdhbhdgasvhgadiebd'
     app.config['SQLALCHEMY_DATABASE_URI']=f'sqlite:///{DB_NAME}'
+    db.init_app(app) 
+    initialize_database(app)  
+    return app
   
-    
+def initialize_database(app):
     from .views import views
     from .auth import auth
-    
+    from .models import Person,Activity
+        
     app.register_blueprint(views,url_prefix='/')
     app.register_blueprint(auth,url_prefix='/')
 
-    from .models import Person,Activity
     with app.app_context():
         db.create_all()
 
-    return app
+
 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
